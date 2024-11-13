@@ -1,0 +1,16 @@
+  #   POST http://localhost:3011/users/register
+  # Content-Type: application/json
+
+  #   {
+  #    "username": "aahoan4",
+  #    "password": "hp1",
+  #    "email": "aahoan4@example.com"
+  #  }
+
+      POST http://localhost:3011/users/login
+  Content-Type: application/json
+
+    {
+     "email": "phephehoan@gmail.com",
+     "password": "hp1"
+   }
