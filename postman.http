@@ -1,16 +1,23 @@
-  #   POST http://localhost:3011/users/register
+  #   POST http://localhost:3011/auth/register
   # Content-Type: application/json
 
   #   {
-  #    "username": "aahoan4",
+  #    "username": "mh04",
   #    "password": "hp1",
-  #    "email": "aahoan4@example.com"
+  #    "email": "mh04@gmail.com"
   #  }
 
-      POST http://localhost:3011/users/login
+  #     POST http://localhost:3011/auth/login
+  # Content-Type: application/json
+
+  #   {
+  #    "email": "mh03@example.com",
+  #    "password": "hp1"
+  #  }
+
+        POST http://localhost:3011/auth/refresh_token
   Content-Type: application/json
 
     {
-     "email": "phephehoan@gmail.com",
-     "password": "hp1"
+     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoibWgwM0BleGFtcGxlLmNvbSIsImlhdCI6MTczMjAwNzI1OCwiZXhwIjoxNzMyNjEyMDU4fQ.tMA_SLehVuwsRKSM0i1VQX-owJYyRHYyxvx3KkKb_qU"
    }
