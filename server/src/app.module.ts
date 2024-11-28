@@ -23,7 +23,6 @@ import { CategoryModule } from './modules/category/category.module';
     ProductsModule,
     AuthModule,
     CategoryModule,
-    
   ],
   controllers: [AppController],
   providers: [AppService],

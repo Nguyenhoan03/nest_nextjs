@@ -2,7 +2,6 @@ import { Controller, Post, Body, UsePipes, ValidationPipe } from '@nestjs/common
 import { AuthService } from './auth.service';
 import { CreateUserDto } from './dto/register-user.dto';
 import { LoginUserDto } from './dto/login-user.dto';
-import { CLIENT_RENEG_LIMIT } from 'tls';
 
 @Controller('auth')
 export class AuthController {
@@ -18,6 +17,7 @@ export class AuthController {
   async login(@Body() loginUserDto: LoginUserDto) {
     return this.authService.login(loginUserDto);
   }
+  
 
   @Post('refresh_token')
   refresh_token(@Body() {refresh_token}) : Promise<string | any>{

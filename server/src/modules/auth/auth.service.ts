@@ -6,7 +6,8 @@ import { Repository } from 'typeorm';
 import { CreateUserDto } from './dto/register-user.dto';
 import { LoginUserDto } from './dto/login-user.dto';
 import * as jwt from 'jsonwebtoken';
-
+import * as dotenv from 'dotenv';
+dotenv.config();
 @Injectable()
 export class AuthService {
   constructor(
@@ -14,6 +15,10 @@ export class AuthService {
   ) {}
 
   async registerUser(createUserDto: CreateUserDto): Promise<User> {
+    const existingUser = await this.userRepository.findOne({ where: { email: createUserDto.email } });
+    if (existingUser) {
+      throw new HttpException('Email đã tồn tại', 400);
+    }
     try {
       const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
       const user = this.userRepository.create({ ...createUserDto, password: hashedPassword });
@@ -62,5 +67,14 @@ export class AuthService {
 
   private generateAccessToken(payload: { id: number; email: string }) {
     return jwt.sign({ id: payload.id, email: payload.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+  }
+
+  async validateUser(email: string, password: string): Promise<any> {
+    const user = await this.userRepository.findOne({ where: { email: email } });
+    if (user && user.password === password) {
+      const { password, ...result } = user;
+      return result;
+    }
+    return null;
   }
 }

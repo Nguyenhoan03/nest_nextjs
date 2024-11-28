@@ -11,13 +11,18 @@
   # Content-Type: application/json
 
   #   {
-  #    "email": "mh03@example.com",
+  #    "email": "mh04@gmail.com",
   #    "password": "hp1"
   #  }
 
-        POST http://localhost:3011/auth/refresh_token
-  Content-Type: application/json
+  #       POST http://localhost:3011/auth/refresh_token
+  # Content-Type: application/json
 
-    {
-     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoibWgwM0BleGFtcGxlLmNvbSIsImlhdCI6MTczMjAwNzI1OCwiZXhwIjoxNzMyNjEyMDU4fQ.tMA_SLehVuwsRKSM0i1VQX-owJYyRHYyxvx3KkKb_qU"
-   }
+  #   {
+  #    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImVtYWlsIjoibWgwM0BleGFtcGxlLmNvbSIsImlhdCI6MTczMjAwNzI1OCwiZXhwIjoxNzMyNjEyMDU4fQ.tMA_SLehVuwsRKSM0i1VQX-owJYyRHYyxvx3KkKb_qU"
+  #  }
+
+  Get http://localhost:3011/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImVtYWlsIjoibWgwNEBnbWFpbC5jb20iLCJpYXQiOjE3MzIwODQ5NDgsImV4cCI6MTczMjA4ODU0OH0.IEyqUUY1aMqaLqTpSndlC97oQ5efxBuBHvVsqNUmCc4
+
+# refresh_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImVtYWlsIjoibWgwNEBnbWFpbC5jb20iLCJpYXQiOjE3MzIwODMwNDAsImV4cCI6MTczMjY4Nzg0MH0.YYVzAvLrIsDhe_oLcyqThKl01ixRbZNiNR8jIBSTVAw
